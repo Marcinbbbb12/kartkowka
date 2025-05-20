@@ -14,13 +14,14 @@ const Zdjecia = () => {
             3: true,
         });
     const toggleCategory = (cat) => {
-        setFilters({ ...filters, [cat]: !filters[cat] });
+        setFilters({ ...filters, [Number(cat)]: !filters[Number(cat)] });
     };
-    const increaseDownload = (index) => {
-
-        dane[index].downloads += 1;
-        setFilters({ ...filters });
-    };
+        const increaseDownload = (index) => {
+            const updatedData = dane.map((img, idx) =>
+                idx === index ? { ...img, downloads: img.downloads + 1 } : img
+            );
+            setFilters({ ...filters });
+        };
     return (
         <div>
             <h1>Kategorie zdjec</h1>

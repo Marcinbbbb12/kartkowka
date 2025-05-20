@@ -1,14 +1,15 @@
 import React from "react";
-import Zdjecia from "./zdjecia";
+import Zdjecia from "./zdjecia.js";
 
-const Gallery = ({ images }) => {
-  return (
-      <div className="gallery">
-        {images.map((image) => (
-            <img key={image.id} src={image.imageUrl} alt={`Img ${image.id}`} />
-        ))}
-      </div>
-  );
+const Zdjeciaa = ({ images = [] }) => {
+    return (
+        <div className="zdjecia">
+            {images.map((image) => (
+                <img key={image.id} src={image.imageUrl} alt={`Img ${image.id}`} />
+            ))}
+            <Zdjecia></Zdjecia>
+        </div>
+    );
 };
 
-export default Gallery;
+export default Zdjeciaa;
